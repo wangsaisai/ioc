@@ -13,8 +13,7 @@ import com.bamboo.ioc.inject.BeanInjector;
  */
 public class IocContainer {
 
-  static {
-    String basePackage = IocContainer.class.getPackage().getName();
+  public static void initialize(String basePackage) {
     BeanDefinitionReader beanDefinitionReader = new AnnotationBeanDefinitionReader(basePackage);
     beanDefinitionReader.getBeanDefinitions().forEach(BeanFactory::registerBean);
     BeanInjector beanInjector = new AnnotationBeanInjector(basePackage);

@@ -16,7 +16,7 @@ public class IocTest {
   @Test
   public void getBean() throws Exception {
     try {
-      Class.forName(IocContainer.class.getName());
+      IocContainer.initialize("com.bamboo.ioc.bean.test");
 
       ComponentBean componentBean = (ComponentBean) BeanFactory
           .getBeanByClassName(ComponentBean.class.getName()).get();
